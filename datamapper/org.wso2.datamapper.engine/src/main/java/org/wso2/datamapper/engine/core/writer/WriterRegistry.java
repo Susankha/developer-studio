@@ -48,6 +48,7 @@ public class WriterRegistry {
 		// FIXME : use java service provider interface rather than hard-coding class names/ importing classes
 		writerMap.put("text/csv",CSVDatumWriter.class);
 		writerMap.put("application/xml", XMLDatumWriter.class);
+		writerMap.put("application/json", JSONDatumWriter.class);
 	}
 	
 	/**

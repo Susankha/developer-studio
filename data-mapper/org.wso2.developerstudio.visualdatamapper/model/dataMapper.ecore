@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dataMapper" nsURI="http:///org/wso2/developerstudio/eclipse/gmf/datamapper"
-    nsPrefix="dataMapper">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datamapper" nsURI="http:///org/wso2/developerstudio/eclipse/gmf/datamapper"
+    nsPrefix="datamapper">
   <eClassifiers xsi:type="ecore:EClass" name="DataMapperNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataMapperDiagram" eSuperTypes="#//DataMapperNode"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataMapperRoot">
@@ -23,6 +23,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Operator" eSuperTypes="#//DataMapperNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="basicContainer" eType="#//OperatorBasicContainer"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serialized" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperatorBasicContainer">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftContainer" eType="#//OperatorLeftContainer"
@@ -111,11 +113,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//Operator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Operator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Operator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constantValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Split" eSuperTypes="#//Operator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="delimiter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrayOutput" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="-1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arrayOutputResultOmitingIndices"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SchemaDataType">
     <eLiterals name="ARRAY"/>
@@ -135,4 +141,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LowerCase" eSuperTypes="#//Operator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Contains" eSuperTypes="#//Operator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UpperCase" eSuperTypes="#//Operator"/>
 </ecore:EPackage>

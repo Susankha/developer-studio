@@ -4,7 +4,8 @@
     modelPluginID="org.wso2.developerstudio.visualdatamapper" modelName="DataMapper"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
   <foreignModel>dataMapper.ecore</foreignModel>
-  <genPackages prefix="DataMapper" disposableProviderFactory="true" ecorePackage="dataMapper.ecore#/">
+  <genPackages prefix="DataMapper" basePackage="org.wso2.developerstudio" disposableProviderFactory="true"
+      ecorePackage="dataMapper.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="dataMapper.ecore#//SchemaDataType">
       <genEnumLiterals ecoreEnumLiteral="dataMapper.ecore#//SchemaDataType/ARRAY"/>
       <genEnumLiterals ecoreEnumLiteral="dataMapper.ecore#//SchemaDataType/BOOLEAN"/>
@@ -36,6 +37,7 @@
     </genClasses>
     <genClasses ecoreClass="dataMapper.ecore#//Operator">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataMapper.ecore#//Operator/basicContainer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Operator/serialized"/>
     </genClasses>
     <genClasses ecoreClass="dataMapper.ecore#//OperatorBasicContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dataMapper.ecore#//OperatorBasicContainer/leftContainer"/>
@@ -98,12 +100,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Concat/delimiter"/>
     </genClasses>
     <genClasses ecoreClass="dataMapper.ecore#//Equal"/>
-    <genClasses ecoreClass="dataMapper.ecore#//Constant"/>
+    <genClasses ecoreClass="dataMapper.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Constant/constantValue"/>
+    </genClasses>
     <genClasses ecoreClass="dataMapper.ecore#//Split">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Split/delimiter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Split/arrayOutput"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dataMapper.ecore#//Split/arrayOutputResultOmitingIndices"/>
     </genClasses>
     <genClasses ecoreClass="dataMapper.ecore#//LowerCase"/>
     <genClasses ecoreClass="dataMapper.ecore#//Contains"/>
+    <genClasses ecoreClass="dataMapper.ecore#//UpperCase"/>
   </genPackages>
 </genmodel:GenModel>

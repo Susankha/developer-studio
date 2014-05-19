@@ -20,6 +20,13 @@
         <ownedChild>
           <domainMetaElement
               href="dataMapper.ecore#//TreeNode"/>
+          <labelMappings
+              xsi:type="gmfmap:FeatureLabelMapping">
+            <diagramLabel
+                href="dataMapper.gmfgraph#TreeNodeName"/>
+            <features
+                href="dataMapper.ecore#//TreeNode/name"/>
+          </labelMappings>
           <diagramNode
               href="dataMapper.gmfgraph#TreeNode"/>
           <children
@@ -53,6 +60,13 @@
             <ownedChild>
               <domainMetaElement
                   href="dataMapper.ecore#//Element"/>
+              <labelMappings
+                  xsi:type="gmfmap:FeatureLabelMapping">
+                <diagramLabel
+                    href="dataMapper.gmfgraph#ElementName"/>
+                <features
+                    href="dataMapper.ecore#//Element/name"/>
+              </labelMappings>
               <diagramNode
                   href="dataMapper.gmfgraph#Element"/>
               <children>
@@ -262,6 +276,24 @@
           href="dataMapper.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
           href="dataMapper.gmfgraph#Contains"/>
+      <children
+          referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild">
+        <containmentFeature
+            href="dataMapper.ecore#//Operator/basicContainer"/>
+      </children>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="dataMapper.ecore#//DataMapperRoot/operators"/>
+    <ownedChild>
+      <domainMetaElement
+          href="dataMapper.ecore#//UpperCase"/>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="dataMapper.gmftool#//@palette/@tools.0/@tools.7"/>
+      <diagramNode
+          href="dataMapper.gmfgraph#UpperCase"/>
       <children
           referencedChild="//@nodes.2/@ownedChild/@children.0/@ownedChild">
         <containmentFeature
